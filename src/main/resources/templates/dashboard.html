@@ -2,9 +2,37 @@
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <title>Dashboard</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
 </head>
 <body>
-<h1>Welcome, <span th:text="${username}">User</span></h1>
-<a href="/editor">Create Blog/Page</a>
+
+<div class="navbar">
+    <div class="left">
+        <a href="#">📚 Bookman</a>
+        <a href="/dashboard">Dashboard</a>
+        <a href="/editor">Create Blog</a>
+    </div>
+    <div class="right">
+        <a href="/login">Login</a>
+        <a href="#">Sign Up</a>
+    </div>
+</div>
+
+<div class="container">
+    <h2>Available Blogs</h2>
+
+    <div class="blog-card">
+        <h3>Sample Blog Title</h3>
+        <p>This is a preview of a blog content...</p>
+    </div>
+
+    <div class="blog-card">
+        <h3>Another Blog</h3>
+        <p>Here is another piece of content preview...</p>
+    </div>
+
+    <a href="/editor" class="create-btn">+ Create New Blog</a>
+</div>
+
 </body>
 </html>
