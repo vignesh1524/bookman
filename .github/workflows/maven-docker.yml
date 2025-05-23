@@ -1,4 +1,4 @@
-name: Build and Dockerize Bookman
+name: CI Build & Dockerize Bookman
 
 on:
   push:
@@ -23,5 +23,11 @@ jobs:
       - name: Build with Maven
         run: mvn clean package --file pom.xml
 
-      - name: Build Docker image
-        run: docker build -t bookman-app .
+      - name: Move JAR to Root (for Docker)
+        run: |
+          mkdir docker
+          cp target/*.jar docker/app.jar
+          cp Dockerfile docker/
+
+      - name: Build Docker Image
+        run: docker build -t bookman-app ./docker
