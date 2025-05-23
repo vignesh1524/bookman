@@ -1,4 +1,4 @@
-package com.author.bookman;
+package com.author.bookman.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
